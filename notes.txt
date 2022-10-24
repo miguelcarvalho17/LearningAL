@@ -1,0 +1,11 @@
+Object Types in AL:
+-Table
+-Page
+-CodeUnit
+-Report
+
+Event Triggers:
+Always start with On
+-OnInsert()
+-OnModidy()
+-OnDelete()

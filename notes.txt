@@ -9,3 +9,55 @@ Always start with On
 -OnInsert()
 -OnModidy()
 -OnDelete()
+
+Variables must contain PascalCase notation, start every word with uppercase letter. 
+Example: Variable for a customer's name -> CustomerName
+
+var CustomerName: Text[50];
+
+It's now possible to add multiple variable declarations of the same type in a singular line.
+
+var
+        myInt, nextInt, thirdInt : Integer;
+        isValid, doCheck : Boolean;
+
+Protected variables - make variables accessible between tables and table extensions and between pages and page extensions.
+
+The Option data type is a zero-based enumerator type; therefore, you can convert option values to integers.
+var 
+        Color : Option Red, Green, Blue;
+Color := Color::Red
+
+Better to use Enum because you can use an Enum object in every other object without the need to redefine it.
+
+Work with collections - Arrays, Lists, Dictionaries
+
+In AL, you start counting at one (1) for an array, while other programming languages,
+like Java, C#, and so on, usually start counting at zero (0) for the first element of an array.
+
+Create and access arrays:
+SalesAmount: array[10] of Integer;
+SalesAmount[5] := 0;
+MultiDimension Array:
+SalesAmount: array[6,9] of Integer;
+SalesAmount[2][1] := 2;
+
+A List data type doesn't require you to define how many elements you want to store up front (while an Array data type does).
+
+Create and access Lists:
+CustomerNames: List of [Text];
+CustomerNames.Add("Paul");
+CustomerNames.Add("Linda");
+CustomerNames.Get(1);   //returns Paul
+
+Dictionary represents a collection of keys and values.
+CountriesDictionary: Dictionary of [Code[20], List of [Text]];
+
+Operators 
+5 / 2 = 2,5     //Division
+5 DIV 2 = 2     //Integer divide
+5 MOD 2 = 1     //Remainder of division
+
+Relational expressions:
+<> (not equal to)
+IN (include in set)

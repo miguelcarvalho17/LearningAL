@@ -1,0 +1,118 @@
+Module: Learn the AL statements in Dynamics 365 Business Central
+
+You can comment by using two forward slashes (//)
+// This is a comment
+
+/* This is a comment
+   on multiple
+   multiple
+   multiple
+   lines. */
+
+In Dynamics 365 Business Central, you can add documentation to your code by including XML elements
+in special comment fields directly in the source code before the block of code that the comment refers to.
+By adding XML comments in code, you can improve readability, add useful information about the implementation,
+and help others take over code that you wrote.
+
+/// <summary>
+/// Provides functionality to create and send e-mails.
+/// </summary>
+
+codeunit 8901 "Email"
+{
+    Access = Public;
+
+    /// <summary>
+    /// Enqueues an email in the outbox to be sent in the background.
+    /// </summary>
+    /// <param name="EmailMessageId">The ID of the email to enqueue</param>
+    procedure Enqueue(EmailMessageId: Guid)
+    begin
+        EmailImpl.Enqueue(EmailMessageId);
+    end;
+...
+
+if statements
+
+var 
+    a: Integer;
+    b: Integer;
+    c: Integer;
+begin
+    a := 10;
+    b := 5;
+
+    if a > b then
+        c := a - b;
+end;
+
+If you want to run multiple statements when the condition is true,
+you need to use a compound statement, as shown in the following example.
+
+var
+    a: Integer;
+    b: Integer;
+    c: Integer;
+begin
+    a := 10;
+    b := 5;
+
+    if a > b then begin
+        c := a - b;
+        Message('%1', c);
+    end;
+end;
+
+Case statements(switchcase)
+
+var
+    a: Integer;
+begin
+    case "Document Type" of
+        "Document Type"::Quote:
+            a := 1 + 1;
+        "Document Type"::Order:
+            a := 2 + 1;
+        "Document Type"::Invoice:
+            begin
+                // Some statement 1;
+                // Some statement 2;
+                // Some statement 3;
+                a := 3 + 1;
+            end;
+        "Document Type"::"Return Order":
+            if Reason = Reason::Return then begin
+                // Some statement 1;
+                // Some statement 2;
+                // Some statement 3;
+                a := 4 + 1;                
+            end;
+        else
+            a := 5 + 1;
+    end;
+
+end;
+
+Use repetitive statements
+
+You can use repetitive statements when you want to repeat the implementation of one or more statements. The five different types of repetitive statements that you can use are:
+
+for-to-do
+
+for-downto-do
+
+foreach-in-do
+
+while-do
+
+repeat-until
+
+For loop:
+
+var
+    intCount: Integer;
+    total: Integer;
+begin
+    for intCount := 1 to 5 do
+        total := total + 3;
+end;

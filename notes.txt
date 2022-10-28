@@ -1,3 +1,5 @@
+Module: Introduction to the basics of AL programming in Dynamics 365 Business Central
+
 Object Types in AL:
 -Table
 -Page

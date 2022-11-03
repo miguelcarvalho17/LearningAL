@@ -95,17 +95,14 @@ end;
 
 Use repetitive statements
 
-You can use repetitive statements when you want to repeat the implementation of one or more statements. The five different types of repetitive statements that you can use are:
+You can use repetitive statements when you want to repeat the implementation of one or more statements.
+The five different types of repetitive statements that you can use are:
 
-for-to-do
-
-for-downto-do
-
-foreach-in-do
-
-while-do
-
-repeat-until
+-for-to-do
+-for-downto-do
+-foreach-in-do
+-while-do
+-repeat-until
 
 For loop:
 

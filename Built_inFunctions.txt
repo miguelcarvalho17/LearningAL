@@ -1,0 +1,85 @@
+Interaction functions
+
+-Message
+-Confirm
+-StrMenu
+-Error
+
+You can notify your user that a certain process has finished or shows the output of an expression.
+Message(string [,Value1, ...]);
+Message('Hello World');
+
+When you want to run only certain parts of your code after a confirmation from the user, use the Confirm function.
+if Confirm('Are you sure you want to delete?') then
+   Message('OK')
+else
+   Message('Not OK');
+
+The StrMenu function can be used to ask people for information and provide them with a selection of choices.
+var
+   Days: Text[50];
+   Selection: Integer;
+begin
+   Days := 'Monday,Tuesday,Wednesday,Thursday,Friday';
+   Selection := StrMenu(Days, 1, 'Which day is today ?');
+   Message('You selected %1.', Selection);
+end;
+
+If something goes wrong, or certain conditions aren't met while you are processing code, you can use the Error message to notify the user.
+After the Error message, code will stop running.
+MESSAGE('1');
+MESSAGE('2');
+ERROR('OOPS !');
+MESSAGE('3');
+
+The string functions are:
+-StrPos and IndexOf
+-CopyStr and Substring
+-SelectStr and Split
+-InsStr
+-StrLen and MaxStrLen
+-LowerCase, UpperCase, ToLower, and ToUpper
+-IncStr
+
+The frequently used date functions are:
+-Date2DMY and Date2DWY
+-CalcDate
+
+Numeric functions include:
+-Round
+-Abs
+-Power
+-Random
+-Randomize
+
+Array functions:
+-ArrayLen
+-CompressArray
+-CopyArray
+
+List functions:
+-Add(X)
+-Contains(X)
+-Get(index)
+-Set(index, X)
+-Insert(index, X)
+-Remove(X)
+-RemoveAt(index)
+-Count(index)
+-AddRange(X, [X], [X], ...)
+-GetRange(index, count, List of [X])
+-RemoveRange(index, count)
+-IndexOf(X)
+-LastIndexOf(X)
+-Reverse
+
+System functions include:
+-UserID
+-CompanyName
+-Today
+-Time
+-WorkDate
+
+Variable functions include:
+-Clear
+-ClearAll
